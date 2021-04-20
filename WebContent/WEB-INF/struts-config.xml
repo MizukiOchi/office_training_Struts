@@ -11,14 +11,14 @@
 
 	<!-- (2)JSPからの遷移先指定 -->
 	<global-fowards>
-		<forward name="fail" path="/pages/Login.jsp"/>
+		<forward name="fail" path="/pages/InputBirthday.jsp"/>
 	</global-fowards>
 
 <!-- (3)アクション・クラスの振舞いを指定 -->
 <action-mappings>
 	<action path="/fortuneResults" type="struts.BirthdayAction" name="BirthdayForm" scope="session">
 		<forward name="success" path="/pages/OmikujiResults.jsp"/>
-		<forward name="fail" path="/pages/Login.jsp"/>
+		<forward name="fail" path="/pages/InputBirthday.jsp"/>
 	</action>
 </action-mappings>
 
