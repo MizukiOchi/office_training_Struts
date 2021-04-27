@@ -1,8 +1,6 @@
 package struts;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,9 +24,9 @@ public final class BirthdayAction extends Action {//Actionクラスをスーパ�
 		BirthdayForm birthdayForm = (BirthdayForm) form;
 		String birthday = birthdayForm.getBirthday();
 
-		List<ActionMessages> errorMessage = checkBirthday(birthday);
-		if(errorMessage != null) {
-//			saveErrors(request, errorMessage); //エラーの保存
+		 checkBirthday(birthday, request);
+		ActionMessages messages  = getErrors(request);
+		if(!messages.isEmpty()) {
 			return (mapping.findForward("fail"));
 		}else {
 		session.setAttribute("birthday", birthday);
@@ -44,13 +42,12 @@ public final class BirthdayAction extends Action {//Actionクラスをスーパ�
 	 *
 	 * @return checkBirthday(birthday)
 	 */
-	public static List<ActionMessages> checkBirthday(String birthday) {
-		List<ActionMessages> checkBirthday = new ArrayList<ActionMessages>();
-		ActionMessages errorsMessage = new ActionMessages();
+	private void  checkBirthday(String birthday, HttpServletRequest request) {
+				ActionMessages errorsMessage = new ActionMessages();
 		if (birthday.length() != 8) {
 			errorsMessage.add(ActionMessages.GLOBAL_MESSAGE,
 					new ActionMessage("errors.length")); //エラー生成
-			checkBirthday.add(errorsMessage);
+			saveErrors(request, errorsMessage); //エラーの保存
 		}
 		SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
 		format.setLenient(false);
@@ -59,9 +56,9 @@ public final class BirthdayAction extends Action {//Actionクラスをスーパ�
 		} catch (Exception e) {
 			errorsMessage.add(ActionMessages.GLOBAL_MESSAGE,
 					new ActionMessage("errors.date")); //エラー生成
-			checkBirthday.add(errorsMessage);
+			saveErrors(request, errorsMessage); //エラーの保存
 		}
-		return checkBirthday; //遷移先の指定
+		return;
 	}
 
 }
