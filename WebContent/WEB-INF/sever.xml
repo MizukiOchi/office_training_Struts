@@ -1,0 +1,25 @@
+<!-- Tomcat Root Context -->
+<!--
+  <Context path="" docBase="ROOT" debug="0"/>
+-->
+
+<Context path="/javatips" docBase="javatips" debug="0"
+         reloadable="false" crossContext="true">
+  <Resource name="jdbc/TestDB" auth="container"
+            type="javax.sql.DataSource" debug="1" />
+  <ResourceParams name="jdbc/TestDB">
+    <parameter>
+      <name>factory</name>
+      <value>org.apache.commons.dbcp.BasicDataSourceFactory</value>
+    </parameter>
+    <parameter>
+       <name>driverClassName</name>
+       <value>org.postgresql.Driver</value>
+    </parameter>
+    <parameter>
+      <name>url</name>
+      <value>jdbc:postgresql://localhost:5432/omikuji"user=m_ochi;password=
+mizusugatr09;useUnicode=true&amp;characterEncoding=Shift_JIS</value>
+    </parameter>
+  </ResourceParams>
+</Context>
