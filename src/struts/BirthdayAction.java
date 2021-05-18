@@ -6,7 +6,6 @@ import java.util.Date;
 import java.util.Random;
 
 import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -29,10 +28,9 @@ public final class BirthdayAction extends Action {//Actionクラスをスーパ�
 			HttpServletResponse response) {
 
 		HttpSession session = request.getSession(); //getSessionメソッドを使用し、HttpSessionオブジェクトを取得。
-//		ActionMessages errors = new ActionMessages();//ActionMessagesは、単一のメッセージを管理するクラス
 
 		//アクション・フォームBeanから値の取り出し
-		BirthdayForm birthdayForm = (BirthdayForm) form;
+		OmikujiResultsForm birthdayForm = (OmikujiResultsForm) form;
 		String birthday = birthdayForm.getBirthday();
 
 		 checkBirthday(birthday, request);
@@ -52,6 +50,7 @@ public final class BirthdayAction extends Action {//Actionクラスをスーパ�
 			 * @return resultsBean
 			 */
 			ResultsBean rb = ResultsDao.selectByBirthday(resultsDate, birthday);
+
 			String omikujiId = rb.getOmikujiId();
 			ServletContext sc = this.getServlet().getServletContext();
 			String path =sc.getRealPath("/WEB-INF/fortuneTelling.csv");
@@ -84,15 +83,31 @@ public final class BirthdayAction extends Action {//Actionクラスをスーパ�
 
 
 			request.setAttribute("results", oi);
-			try {
-				request.getRequestDispatcher("/jsp/OmikujiResults.jsp").forward(request, response);
-			} catch (ServletException e) {
-				// TODO 自動生成された catch ブロック
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO 自動生成された catch ブロック
-				e.printStackTrace();
-			}
+
+			System.out.println("結果取得確認");
+			System.out.println("商い："+oi.getBusiness());
+			System.out.println("願い事："+oi.getWish());
+			System.out.println("学問："+oi.getStudy());
+
+//			try {
+//				request.getRequestDispatcher("/pages/OmikujiResults.jsp").forward(request, response);
+//			} catch (ServletException e) {
+//				// TODO 自動生成された catch ブロック
+//				e.printStackTrace();
+//			} catch (IOException e) {
+//				// TODO 自動生成された catch ブロック
+//				e.printStackTrace();
+//			}
+
+//			session = request.getSession(); //getSessionメソッドを使用し、HttpSessionオブジェクトを取得。
+//
+//			//アクション・フォームBeanから値の取り出し
+//			OmikujiResultsForm omikujiResultsForm = (OmikujiResultsForm) form;
+//			String unsei = omikujiResultsForm.getUnsei();
+//			String business = omikujiResultsForm.getBusines();
+//			String wish = omikujiResultsForm.getWish();
+//			String study = omikujiResultsForm.getStudy();
+//			session = request.getSession();
 			return (mapping.findForward("success"));
 		}
 	}

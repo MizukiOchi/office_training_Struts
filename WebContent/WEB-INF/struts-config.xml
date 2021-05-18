@@ -6,7 +6,7 @@
 <struts-config>
 	<!-- (1)アクション・フォームBeanの指定 -->
 	<form-beans>
-		<form-bean name="BirthdayForm" type="struts.BirthdayForm"/>
+		<form-bean name="OmikujiResultsForm" type="struts.OmikujiResultsForm"/>
 	</form-beans>
 
 	<!-- (2)JSPからの遷移先指定 -->
@@ -16,7 +16,7 @@
 
 <!-- (3)アクション・クラスの振舞いを指定 -->
 <action-mappings>
-	<action path="/fortuneResults" type="struts.BirthdayAction" name="BirthdayForm" scope="session">
+	<action path="/fortuneResults" type="struts.BirthdayAction" name="OmikujiResultsForm" scope="session">
 		<forward name="success" path="/pages/OmikujiResults.jsp"/>
 		<forward name="fail" path="/pages/InputBirthday.jsp"/>
 	</action>
