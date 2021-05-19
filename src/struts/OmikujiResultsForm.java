@@ -5,9 +5,9 @@ import org.apache.struts.action.ActionForm;
 public final class OmikujiResultsForm extends ActionForm {
 
 	private String birthday;
-	private String unsei;
+	private String fortuneName;
 	private String wish;
-	private String busines;
+	private String business;
 	private String study;
 
 	public String getBirthday() {
@@ -18,12 +18,12 @@ public final class OmikujiResultsForm extends ActionForm {
 		this.birthday = birthday;
 	}
 
-	public String getUnsei() {
-		return unsei;
+	public String getFortuneName() {
+		return fortuneName;
 	}
 
-	public void setUnsei(String unsei) {
-		this.unsei = unsei;
+	public void setFortuneName(String fortuneName) {
+		this.fortuneName = fortuneName;
 	}
 
 	public String getWish() {
@@ -34,12 +34,12 @@ public final class OmikujiResultsForm extends ActionForm {
 		this.wish = wish;
 	}
 
-	public String getBusines() {
-		return busines;
+	public String getBusiness() {
+		return business;
 	}
 
-	public void setBusines(String busines) {
-		this.busines = busines;
+	public void setBusiness(String business) {
+		this.business = business;
 	}
 
 	public String getStudy() {
@@ -52,13 +52,8 @@ public final class OmikujiResultsForm extends ActionForm {
 
 	@Override
 	public String toString() {
-		return "BirthdayForm [birthday=" + birthday + ", unsei=" + unsei + ", wish=" + wish + ", busines=" + busines
-				+ ", study=" + study + ", servlet=" + servlet + ", multipartRequestHandler=" + multipartRequestHandler
-				+ ", getBirthday()=" + getBirthday() + ", getUnsei()=" + getUnsei() + ", getWish()=" + getWish()
-				+ ", getBusines()=" + getBusines() + ", getStudy()=" + getStudy() + ", getServlet()=" + getServlet()
-				+ ", getServletWrapper()=" + getServletWrapper() + ", getMultipartRequestHandler()="
-				+ getMultipartRequestHandler() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ ", toString()=" + super.toString() + "]";
+		return "OmikujiResultsForm [birthday=" + birthday + ", fortuneName=" + fortuneName + ", wish=" + wish
+				+ ", business=" + business + ", study=" + study + "]";
 	}
 
 }

@@ -7,12 +7,9 @@
 	<!-- (1)アクション・フォームBeanの指定 -->
 	<form-beans>
 		<form-bean name="OmikujiResultsForm" type="struts.OmikujiResultsForm"/>
+		<form-bean name="HarfMonthResultsForm" type="struts.HarfMonthResultsForm"/>
+		<form-bean name="SameBirthdayForm" type="struts.SameBirthdayForm"/>
 	</form-beans>
-
-	<!-- (2)JSPからの遷移先指定 -->
-	<global-fowards>
-		<forward name="fail" path="/pages/InputBirthday.jsp"/>
-	</global-fowards>
 
 <!-- (3)アクション・クラスの振舞いを指定 -->
 <action-mappings>
@@ -20,7 +17,14 @@
 		<forward name="success" path="/pages/OmikujiResults.jsp"/>
 		<forward name="fail" path="/pages/InputBirthday.jsp"/>
 	</action>
+	<action path="/hmResults" type="struts.HarfMonthResultsAction" name="HarfMonthResultsForm" scope="session">
+		<forward name="success" path="JharfMonthResults"/>
+	</action>
+	<action path="/sbResults" type="struts.SameBirthdayAction" name="SameBirthdayForm" scope="session">
+		<forward name="success" path="JsameBirthday"/>
+	</action>
 </action-mappings>
+
 
 <!-- (4)メッセージ・リソース・ファイルの指定 -->
 <message-resources parameter="MessageResources"/>

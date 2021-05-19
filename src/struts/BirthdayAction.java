@@ -30,8 +30,8 @@ public final class BirthdayAction extends Action {//Actionクラスをスーパ�
 		HttpSession session = request.getSession(); //getSessionメソッドを使用し、HttpSessionオブジェクトを取得。
 
 		//アクション・フォームBeanから値の取り出し
-		OmikujiResultsForm birthdayForm = (OmikujiResultsForm) form;
-		String birthday = birthdayForm.getBirthday();
+		OmikujiResultsForm OmikujiResultsForm = (OmikujiResultsForm) form;
+		String birthday = OmikujiResultsForm.getBirthday();
 
 		 checkBirthday(birthday, request);
 		ActionMessages messages  = getErrors(request);
@@ -81,33 +81,12 @@ public final class BirthdayAction extends Action {//Actionクラスをスーパ�
 			/**omikuji_idを条件にomikujiテーブルから占い結果を取得する処理。*/
 			OmikujiBean oi = OmikujiDao.selectByOmikuji(omikujiId);
 
-
-			request.setAttribute("results", oi);
-
-			System.out.println("結果取得確認");
-			System.out.println("商い："+oi.getBusiness());
-			System.out.println("願い事："+oi.getWish());
-			System.out.println("学問："+oi.getStudy());
-
-//			try {
-//				request.getRequestDispatcher("/pages/OmikujiResults.jsp").forward(request, response);
-//			} catch (ServletException e) {
-//				// TODO 自動生成された catch ブロック
-//				e.printStackTrace();
-//			} catch (IOException e) {
-//				// TODO 自動生成された catch ブロック
-//				e.printStackTrace();
-//			}
-
-//			session = request.getSession(); //getSessionメソッドを使用し、HttpSessionオブジェクトを取得。
-//
-//			//アクション・フォームBeanから値の取り出し
-//			OmikujiResultsForm omikujiResultsForm = (OmikujiResultsForm) form;
-//			String unsei = omikujiResultsForm.getUnsei();
-//			String business = omikujiResultsForm.getBusines();
-//			String wish = omikujiResultsForm.getWish();
-//			String study = omikujiResultsForm.getStudy();
-//			session = request.getSession();
+			oi.getFortuneName();
+			oi.getWish();
+			oi.getBusiness();
+			oi.getStudy();
+			
+			session.setAttribute("results", oi);
 			return (mapping.findForward("success"));
 		}
 	}
