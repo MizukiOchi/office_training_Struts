@@ -2,14 +2,12 @@
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
-<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> --%>
+<%-- <%@ taglib uri="/WEB-INF/tld/c.tld" prefix="c" %> --%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>åŠå¹´ã®çµæœå‰²åˆ</title>
+<title>”¼”N‚ÌŒ‹‰ÊŠ„‡</title>
 <style>
 body {
 	margin-left: 500px;
@@ -17,8 +15,8 @@ body {
 	background: #EEE8AA;
 }
 
-<%--å…±é€šãƒœã‚¿ãƒ³-- %>
- <%--ã¾ãšã¯ãŠæ±ºã¾ã‚Šã®ãƒœãƒƒã‚¯ã‚¹ã‚µã‚¤ã‚ºç®—å‡ºã‚’borer-boxã« --%>
+<%--‹¤’Êƒ{ƒ^ƒ“-- %>
+ <%--‚Ü‚¸‚Í‚¨Œˆ‚Ü‚è‚Ìƒ{ƒbƒNƒXƒTƒCƒYZo‚ğborer-box‚É --%>
   *, *:before, *:after {
 	-webkit-box-sizing: inherit;
 	box-sizing: inherit;
@@ -27,7 +25,7 @@ body {
 html {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	font-size: 62.5%; /*remç®—å‡ºã‚’ã—ã‚„ã™ãã™ã‚‹ãŸã‚ã«*/
+	font-size: 62.5%; /*remZo‚ğ‚µ‚â‚·‚­‚·‚é‚½‚ß‚É*/
 }
 
 h2 {
@@ -36,7 +34,7 @@ h2 {
 	margin-left: 150px;
 }
 
-<%--ãƒœã‚¿ãƒ³--%>
+<%--ƒ{ƒ^ƒ“--%>
 .button, .btn, a.btn, button.btn {
 	font-size: 1.6rem;
 	font-weight: 700;
@@ -61,7 +59,7 @@ h2 {
 	font-family: arial narrow;
 }
 
-<%--ãƒœã‚¿ãƒ³ãƒ‡ã‚¶ã‚¤ãƒ³--%>
+<%--ƒ{ƒ^ƒ“ƒfƒUƒCƒ“--%>
 button.btn--green.btn--emboss {
 	color: #000000;
 	text-shadow: -1px -1px 1px 55d8ff;
@@ -78,7 +76,7 @@ button.btn--green.btn--cubic:hover {
 	margin-left: 150px;
 }
 
-<%--ãƒ†ãƒ¼ãƒ–ãƒ«ã‚µã‚¤ã‚º--%>
+<%--ƒe[ƒuƒ‹ƒTƒCƒY--%>
 table{
 	font-family: arial narrow;
 	font-size: 5px;
@@ -89,7 +87,7 @@ table{
 	border-spacing: 0;
 }
 
-<%--ãƒ†ãƒ¼ãƒ–ãƒ«ãƒ‡ã‚¶ã‚¤ãƒ³--%>
+<%--ƒe[ƒuƒ‹ƒfƒUƒCƒ“--%>
 .tableDesign{
 	table-layout: auto;
 	font-size: 20px;
@@ -104,29 +102,29 @@ tbody{
 width: 300px;
 }
 
-<%--ãƒ˜ãƒƒãƒ€ãƒ¼ --%>
+<%--ƒwƒbƒ_[ --%>
 .tableDesign thead th {
 	background:#C4A3BF;
 	font-weight: bold;
 	text-align: center;
 }
 
-<%--ãƒœãƒ‡ã‚£é …ç›®ãƒ»ãƒ•ãƒƒã‚¿ãƒ¼é …ç›® --%>
+<%--ƒ{ƒfƒB€–ÚEƒtƒbƒ^[€–Ú --%>
 .tableDesign tbody th,
 .tableDesign tfoot th {
 	background:#FEEEED;
 }
-<%--ãƒœãƒ‡ã‚£ãƒ‡ãƒ¼ã‚¿ãƒ»ãƒ•ãƒƒã‚¿ãƒ¼ãƒ‡ãƒ¼ã‚¿ --%>
+<%--ƒ{ƒfƒBƒf[ƒ^Eƒtƒbƒ^[ƒf[ƒ^ --%>
 .tableDesign tbody td,
 .tableDesign tfoot td {
 	text-align:center;
 }
 
-/* å¶æ•°è¡Œ ï¼‘è¡Œã”ã¨ã®è‰²å¤‰ãˆãŒä¸è¦ãªã‚‰å‰Šé™¤ */
+/* ‹ô”s ‚Ps‚²‚Æ‚ÌF•Ï‚¦‚ª•s—v‚È‚çíœ */
 .tableDesign tr:nth-child(2n) td {
     background: #C0C0C0;
 }
-/* å¶æ•°è¡Œã®é …ç›® ï¼‘è¡Œã”ã¨ã®è‰²å¤‰ãˆãŒä¸è¦ãªã‚‰å‰Šé™¤ */
+/* ‹ô”s‚Ì€–Ú ‚Ps‚²‚Æ‚ÌF•Ï‚¦‚ª•s—v‚È‚çíœ */
 .tableDesign tr{
     background: #FBFBF6;
 }
@@ -138,15 +136,17 @@ width: 300px;
 </head>
 
 <body>
-	<h2>å„é‹å‹¢ã®å‰²åˆ</h2>
+	<h2>Še‰^¨‚ÌŠ„‡</h2>
 
 	<div class=title>
-		â—éå»åŠå¹´ã®å…¨ä½“ã®ãŠã¿ãã˜é‹å‹¢çµæœã®å‰²åˆ <br>
+		œ‰ß‹”¼”N‚Ì‘S‘Ì‚Ì‚¨‚İ‚­‚¶‰^¨Œ‹‰Ê‚ÌŠ„‡ <br>
 	<table class=tableDesign>
 		<thead>
 			<tr>
-			<c:forEach var="hPercent" items="${resultsPercentList}">
+			<%-- <bean:parameter id ="hPercent" name ="resultsPercentList"/> --%>
+			 <c:forEach var="hPercent" items="${resultsPercentList}">
 				<th class="fixed01">
+				<bean:write name="resultsPercentList" property="hPercent" scope="request" />
 				<c:out value="${hPercent.hUnseimei}" />
 				</th>
 				</c:forEach>
@@ -166,7 +166,7 @@ width: 300px;
 </div>
 
 		<div class=title>
-			â—æœ¬æ—¥ã®èª•ç”Ÿæ—¥ã®ãŠã¿ãã˜é‹å‹¢çµæœã®å‰²åˆ<br>
+			œ–{“ú‚Ì’a¶“ú‚Ì‚¨‚İ‚­‚¶‰^¨Œ‹‰Ê‚ÌŠ„‡<br>
 		<table class=tableDesign>
 			<thead>
 				<tr>

@@ -1,27 +1,24 @@
 package struts;
 
-import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.struts.action.Action;
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+
 import Bean.ResultsBean;
 import DAO.ResultsDao;
 
-/**
- * Servlet implementation class sameBirthday
- */
-@WebServlet("/SameBirthday")
-public class SameBirthdayAction extends HttpServlet {
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+public final class SameBirthdayAction extends Action {
+	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
+			HttpServletResponse response) {
 
 		/**今日の日付を取得する */
 		Date today = new Date();
@@ -39,7 +36,9 @@ public class SameBirthdayAction extends HttpServlet {
 		List<ResultsBean> pastBirhdayResults = ResultsDao.pastBirhdayResults(sqlDate, resultsDate, birthday);
 
 		request.setAttribute("pastBirhdayResults", pastBirhdayResults);
-		request.getRequestDispatcher("/jsp/JsameBirthday.jsp").forward(request, response);
+//		request.getRequestDispatcher("/jsp/JsameBirthday.jsp").forward(request, response);
+		return (mapping.findForward("success"));
+
 	}
 
 	/**

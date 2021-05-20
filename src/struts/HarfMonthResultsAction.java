@@ -88,14 +88,11 @@ public final class HarfMonthResultsAction extends Action {
 			map.put("unseimei", tFortuneNumName);
 			map.put("wariai", tRoundingPercent + "%");
 			resultsTodayList.add(map);
-			System.out.println(resultsTodayList.get(1));
 		}
 
-
-
-		request.setAttribute("resultsPercentList", resultPercent);
-		request.setAttribute("resultsTodayList", resultsTodayList);
-		return (mapping.findForward("success"));
+			request.setAttribute("resultsPercentList", resultPercent);
+			request.setAttribute("resultsTodayList", resultsTodayList);
+			return (mapping.findForward("success"));
 	}
 
 

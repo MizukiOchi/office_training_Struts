@@ -130,7 +130,7 @@ margin-left: -200px;
 			<%-- <html:form action="hmResults"/>
 			<html:submit property="submit" value="RESULTS OF PERCENTAGE"/> --%>
 			<a class="btn btn--green btn--emboss btn--cubic"  href="/officeTrainingStruts/hmResults.do">RESULTS OF PERCENTAGE</a>
-			<a class="btn btn--green btn--emboss btn--cubic" href="/sbResults">YOUR FORTUNE RESULTS</a>
+			<a class="btn btn--green btn--emboss btn--cubic" href="/officeTrainingStruts/sbResults.do">YOUR FORTUNE RESULTS</a>
 	</div>
 
 </body>
