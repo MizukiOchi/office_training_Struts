@@ -144,7 +144,9 @@ width: 300px;
 		<thead>
 			<tr>
 			<%-- <bean:parameter id ="hPercent" name ="resultsPercentList"/> --%>
+			<input name="detail[1].detailField1" value="abcdefg" type="text" />
 			 <c:forEach var="hPercent" items="${resultsPercentList}">
+
 				<th class="fixed01">
 				<bean:write name="resultsPercentList" property="hPercent" scope="request" />
 				<c:out value="${hPercent.hUnseimei}" />
