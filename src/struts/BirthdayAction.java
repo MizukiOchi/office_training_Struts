@@ -32,6 +32,7 @@ public final class BirthdayAction extends Action {//Actionクラスをスーパ�
 		//アクション・フォームBeanから値の取り出し
 		OmikujiResultsForm OmikujiResultsForm = (OmikujiResultsForm) form;
 		String birthday = OmikujiResultsForm.getBirthday();
+		session.setAttribute("birthday", birthday);//画面遷移を何回しても半永久敵に値が保存できる
 
 		 checkBirthday(birthday, request);
 		ActionMessages messages  = getErrors(request);
@@ -85,7 +86,7 @@ public final class BirthdayAction extends Action {//Actionクラスをスーパ�
 			oi.getWish();
 			oi.getBusiness();
 			oi.getStudy();
-			
+
 			session.setAttribute("results", oi);
 			return (mapping.findForward("success"));
 		}

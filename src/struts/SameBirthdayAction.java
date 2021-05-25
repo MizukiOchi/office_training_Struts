@@ -36,7 +36,6 @@ public final class SameBirthdayAction extends Action {
 		List<ResultsBean> pastBirhdayResults = ResultsDao.pastBirhdayResults(sqlDate, resultsDate, birthday);
 
 		request.setAttribute("pastBirhdayResults", pastBirhdayResults);
-//		request.getRequestDispatcher("/jsp/JsameBirthday.jsp").forward(request, response);
 		return (mapping.findForward("success"));
 
 	}

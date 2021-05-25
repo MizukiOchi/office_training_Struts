@@ -1,11 +1,11 @@
-<%@ page contentType="text/html; charset=Shift_JIS" %>
-<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
-<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
-<%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>”¼”N‚Ì’a¶“úŒ‹‰Ê</title>
+<title>åŠå¹´ã®èª•ç”Ÿæ—¥çµæœ</title>
 <style>
 body {
 	margin-left: 500px;
@@ -13,8 +13,8 @@ body {
 	background: #EEE8AA;
 }
 
-<%--‹¤’Êƒ{ƒ^ƒ“-- %>
-<%--‚Ü‚¸‚Í‚¨Œˆ‚Ü‚è‚Ìƒ{ƒbƒNƒXƒTƒCƒYZo‚ğborer-box‚É --%>
+<%--å…±é€šãƒœã‚¿ãƒ³-- %>
+<%--ã¾ãšã¯ãŠæ±ºã¾ã‚Šã®ãƒœãƒƒã‚¯ã‚¹ã‚µã‚¤ã‚ºç®—å‡ºã‚’borer-boxã« --%>
 *, *:before, *:after {
 	-webkit-box-sizing: inherit;
 	box-sizing: inherit;
@@ -23,7 +23,7 @@ body {
 html {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	font-size: 62.5%; /*remZo‚ğ‚µ‚â‚·‚­‚·‚é‚½‚ß‚É*/
+	font-size: 62.5%; /*remç®—å‡ºã‚’ã—ã‚„ã™ãã™ã‚‹ãŸã‚ã«*/
 }
 h2{
 font-size: 25px;
@@ -42,7 +42,7 @@ table{
 	border-spacing: 0;
 }
 
-<%--ƒe[ƒuƒ‹ƒfƒUƒCƒ“--%>
+<%--ãƒ†ãƒ¼ãƒ–ãƒ«ãƒ‡ã‚¶ã‚¤ãƒ³--%>
 .pastData{
 	table-layout: auto;
 }
@@ -58,29 +58,29 @@ width: 300px;
 
 }
 
-<%--ƒwƒbƒ_[ --%>
+<%--ãƒ˜ãƒƒãƒ€ãƒ¼ --%>
 .pastData thead th {
 	background:#C4A3BF;
 	font-weight: bold;
 	text-align: center;
 }
 
-<%--ƒ{ƒfƒB€–ÚEƒtƒbƒ^[€–Ú --%>
+<%--ãƒœãƒ‡ã‚£é …ç›®ãƒ»ãƒ•ãƒƒã‚¿ãƒ¼é …ç›® --%>
 .pastData tbody th,
 .pastData tfoot th {
 	background:#FEEEED;
 }
-<%--ƒ{ƒfƒBƒf[ƒ^Eƒtƒbƒ^[ƒf[ƒ^ --%>
+<%--ãƒœãƒ‡ã‚£ãƒ‡ãƒ¼ã‚¿ãƒ»ãƒ•ãƒƒã‚¿ãƒ¼ãƒ‡ãƒ¼ã‚¿ --%>
 .pastData tbody td,
 .pastData tfoot td {
 	text-align:center;
 }
 
-/* ‹ô”s ‚Ps‚²‚Æ‚ÌF•Ï‚¦‚ª•s—v‚È‚çíœ */
+/* å¶æ•°è¡Œ ï¼‘è¡Œã”ã¨ã®è‰²å¤‰ãˆãŒä¸è¦ãªã‚‰å‰Šé™¤ */
 .pastData tr:nth-child(2n) td {
     background: #C0C0C0;
 }
-/* ‹ô”s‚Ì€–Ú ‚Ps‚²‚Æ‚ÌF•Ï‚¦‚ª•s—v‚È‚çíœ */
+/* å¶æ•°è¡Œã®é …ç›® ï¼‘è¡Œã”ã¨ã®è‰²å¤‰ãˆãŒä¸è¦ãªã‚‰å‰Šé™¤ */
 .pastData tr{
     background: #FBFBF6;
 }
@@ -109,7 +109,7 @@ width: 300px;
 	font-family: arial narrow;
 }
 
-<%--ƒ{ƒ^ƒ“--%>
+<%--ãƒœã‚¿ãƒ³--%>
 a.btn--green.btn--emboss {
 	color: #000000;
 	text-shadow: -1px -1px 1px 55d8ff;
@@ -139,15 +139,15 @@ button.btn--green.btn--cubic:hover {
 </style>
 </head>
 <body>
-	<h2>‚ ‚È‚½‚Ì‰ß‹”¼”NŠÔ‚Ìè‚¢Œ‹‰Ê</h2>
+	<h2>ã‚ãªãŸã®éå»åŠå¹´é–“ã®å ã„çµæœ</h2>
 	<table class=pastData>
 	<thead>
 		<tr>
-			<th class="fixed01">è‚Á‚½“ú</th>
-			<th class="fixed01">‰^¨</th>
-			<th class="fixed01">Šè‚¢–</th>
-			<th class="fixed01">¤‚¢</th>
-			<th class="fixed01">Šw–â</th>
+			<th class="fixed01">å ã£ãŸæ—¥</th>
+			<th class="fixed01">é‹å‹¢</th>
+			<th class="fixed01">é¡˜ã„äº‹</th>
+			<th class="fixed01">å•†ã„</th>
+			<th class="fixed01">å­¦å•</th>
 		</tr>
 		</thead>
 		<tbody>

@@ -13,15 +13,18 @@
 
 <!-- (3)アクション・クラスの振舞いを指定 -->
 <action-mappings>
-	<action path="/fortuneResults" type="struts.BirthdayAction" name="OmikujiResultsForm" scope="session">
+	<action path="/fortuneResults" type="struts.BirthdayAction" name="OmikujiResultsForm" scope="request">
 		<forward name="success" path="/pages/OmikujiResults.jsp"/>
 		<forward name="fail" path="/pages/InputBirthday.jsp"/>
 	</action>
-	<action path="/hmResults" type="struts.HarfMonthResultsAction" name="HarfMonthResultsForm" scope="session">
+	<action path="/hmResults" type="struts.HarfMonthResultsAction" name="HarfMonthResultsForm" scope="request">
 		<forward name="success" path="/pages/JhalfMonthResults.jsp"/>
 	</action>
-	<action path="/sbResults" type="struts.SameBirthdayAction" name="SameBirthdayForm" scope="session">
+	<action path="/sbResults" type="struts.SameBirthdayAction" name="SameBirthdayForm" scope="request">
 		<forward name="success" path="/pages/JsameBirthday.jsp"/>
+	</action>
+	<action path="/Return" type="struts.ReturnAction" name="ReturnForm" scope="request">
+		<forward name="success" path="/pages/InputBirthday.jsp"/>
 	</action>
 </action-mappings>
 

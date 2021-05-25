@@ -126,9 +126,7 @@ margin-left: -200px;
 
 		<img class="panda" src="img/panda.jpg">
 		<div class="button">
-			<button class="btn btn--green btn--emboss btn--cubic" type=button onclick="history.back()">RETURN</button>
-			<%-- <html:form action="hmResults"/>
-			<html:submit property="submit" value="RESULTS OF PERCENTAGE"/> --%>
+			<a class="btn btn--green btn--emboss btn--cubic"  href="/officeTrainingStruts/Return.do">RETURN</a>
 			<a class="btn btn--green btn--emboss btn--cubic"  href="/officeTrainingStruts/hmResults.do">RESULTS OF PERCENTAGE</a>
 			<a class="btn btn--green btn--emboss btn--cubic" href="/officeTrainingStruts/sbResults.do">YOUR FORTUNE RESULTS</a>
 	</div>
