@@ -7,7 +7,7 @@
 	<!-- (1)アクション・フォームBeanの指定 -->
 	<form-beans>
 		<form-bean name="OmikujiResultsForm" type="struts.OmikujiResultsForm"/>
-		<form-bean name="HarfMonthResultsForm" type="struts.HarfMonthResultsForm"/>
+		<form-bean name="HalfMonthResultsForm" type="struts.HalfMonthResultsForm"/>
 		<form-bean name="SameBirthdayForm" type="struts.SameBirthdayForm"/>
 	</form-beans>
 
@@ -17,7 +17,7 @@
 		<forward name="success" path="/pages/OmikujiResults.jsp"/>
 		<forward name="fail" path="/pages/InputBirthday.jsp"/>
 	</action>
-	<action path="/hmResults" type="struts.HarfMonthResultsAction" name="HarfMonthResultsForm" scope="request">
+	<action path="/hmResults" type="struts.HalfMonthResultsAction" name="HalfMonthResultsForm" scope="request">
 		<forward name="success" path="/pages/JhalfMonthResults.jsp"/>
 	</action>
 	<action path="/sbResults" type="struts.SameBirthdayAction" name="SameBirthdayForm" scope="request">

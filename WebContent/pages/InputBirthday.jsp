@@ -81,7 +81,7 @@ prefix属性により、struts-html.tldを使用する場合は、タグにhtmlを指定する。--%>
 		/**エラー文のデザイン*/
 		/**errorMessage部分の設定*/
 		.errorMessage{
-		font-size: 14px;
+		font-size: 18px;
 		color: #CD5C5C;
 		}
 		/**説明文のデザイン*/
@@ -101,8 +101,9 @@ prefix属性により、struts-html.tldを使用する場合は、タグにhtmlを指定する。--%>
 <p class="explain">Input Your Birthday Here↓</p>
 
 <%--エラーメッセージの処理 --%>
+<div class="errorMessage">
 <html:errors/>  <%-- (3)<html:error/>タグはエラーが生成されている場合は、エラーメッセージを表示し、エラーが生成されていない場合は、何も表示したいタグ。--%>
-
+</div>
 <html:form action="/fortuneResults" focus="birthday"> <%-- (4) <html:form>タグはHTMLの<form>タグとほぼ同様の振舞いをするタグ。action属性はsubmitボタンが押された時の遷移先を指定。focus属性はこのJSPファイルが開かれた時にどのフォーム項目を初めに選択可能にするかを指定する。--%>
 	<html:text property="birthday" size="8" /> <%-- (5) <html:text>タグはHTMLの<input type=text>タグとほぼ同様の振舞いをするタグ。property属性はHTMLのname属性、size属性はHTMLのsize属性と同様の働きをする。--%>
 	<div class = "button">

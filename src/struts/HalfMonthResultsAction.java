@@ -20,7 +20,7 @@ import Bean.OmikujiBean;
 import DAO.OmikujiDao;
 import DAO.ResultsDao;
 
-public final class HarfMonthResultsAction extends Action {
+public final class HalfMonthResultsAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) {
 

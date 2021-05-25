@@ -2,6 +2,6 @@ package struts;
 
 import org.apache.struts.action.ActionForm;
 
-public final class HarfMonthResultsForm extends ActionForm {
+public final class HalfMonthResultsForm extends ActionForm {
 
 }
